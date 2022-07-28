@@ -25,10 +25,39 @@ public class JpaMain {
 //            em.remove(findMember);
 //            findMember.setName("HelloJPA");
 
-            List<Member> result = em.createQuery("select m.id,m.name from Member as m", Member.class).getResultList();
-            for (Member member : result){
-                System.out.println("member.name = " + member.getName());
-            }
+//            List<Member> result = em.createQuery("select m.id,m.name from Member as m", Member.class).getResultList();
+//            for (Member member : result){
+//                System.out.println("member.name = " + member.getName());
+//            }
+//            tx.commit();
+            // 비영속
+//            Member member = new Member();
+//            member.setId(121123L);
+//            member.setName("h2212312412111");
+
+            // 영속
+//            System.out.println("=====================before=====================");
+//            em.persist(member);
+//            System.out.println("=====================after=====================");
+//            Member findMember1 = em.find(Member.class, 121L);
+//            Member findMember2 = em.find(Member.class, 121L);
+//            System.out.println(findMember1 == findMember2);
+//            System.out.println("findMember.id  " + findMember1.getId());
+//            System.out.println("findMember.name " + findMember1.getName());
+//            Member member1 = new Member(152L,"hi1");
+//            Member member2 = new Member(153L,"hi2");
+//            em.persist(member1);
+//            em.persist(member2);
+//            System.out.println("===========================");
+
+//            Member member = em.find(Member.class, 150L);
+//            member.setName("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+//            }
+            Member member = new Member();
+            member.setUsername("a1");
+            em.persist(member);
+
+            System.out.println("==========================================================");
             tx.commit();
 
         } catch (Exception e) {
