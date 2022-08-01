@@ -1,6 +1,9 @@
 package com.example.basic_jpa;
 
 
+import com.example.basic_jpa.jpashop.Order;
+import com.example.basic_jpa.jpashop.OrderItem;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -19,8 +22,6 @@ public class JpaMain {
         try {
 
             tx.commit();
-
-
         } catch (Exception e) {
             tx.rollback();
         } finally {
